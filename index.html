@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ever After Photography — Wedding & Portrait Photography, Dar es Salaam</title>
+<meta name="description" content="Ever After Photography captures weddings, engagements and portraits across Dar es Salaam and Tanzania.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#0c0c0c;
+  --white:#ffffff;
+  --cream:#f6f1e9;
+  --line:rgba(12,12,12,0.12);
+  --line-dark:rgba(255,255,255,0.16);
+  --radius-lg:22px;
+  --radius-md:14px;
+  --radius-sm:10px;
+  --radius-pill:50px;
+  --max:1180px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Poppins', sans-serif;
+  background:var(--cream);
+  color:var(--black);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit; cursor:pointer;}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+.serif-i{font-family:'Playfair Display', serif; font-style:italic; font-weight:500;}
+.eyebrow{
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700;
+  color:#8a6a52; margin-bottom:14px; display:block;
+}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky; top:0; z-index:200;
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 28px; max-width:var(--max); margin:0 auto;
+}
+.logo{ font-weight:900; font-size:21px; letter-spacing:-0.01em; line-height:1; }
+.logo span{
+  display:block; font-family:'Playfair Display', serif; font-style:italic; font-weight:500;
+  font-size:12px; color:#8a6a52; margin-top:2px;
+}
+.nav-links{ display:flex; gap:32px; align-items:center; }
+.nav-links a{
+  font-size:14px; font-weight:600; padding:6px 2px;
+  border-bottom:2px solid transparent; transition:opacity .2s ease, border-color .2s ease;
+}
+.nav-links a:hover{opacity:.6;}
+.nav-links a.active{border-color:var(--black);}
+.nav-cta{
+  background:var(--black); color:var(--white);
+  padding:12px 22px; font-size:13.5px; font-weight:700;
+  border-radius:var(--radius-pill); transition:background .2s ease, transform .2s ease;
+}
+.nav-cta:hover{background:#333; transform:translateY(-1px);}
+.burger{display:none; flex-direction:column; gap:5px; background:none; border:0;}
+.burger span{width:24px; height:2px; background:var(--black); display:block; border-radius:2px;}
+@media (max-width:900px){
+  .nav-links{
+    position:fixed; inset:64px 0 0 0; background:var(--white);
+    flex-direction:column; align-items:flex-start; padding:28px; gap:20px;
+    transform:translateY(-110%); transition:transform .3s ease; border-top:1px solid var(--line);
+  }
+  .nav-links.open{transform:translateY(0);}
+  .burger{display:flex;}
+  .nav-cta{order:5; margin-top:8px;}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative; min-height:80vh;
+  background:var(--black); color:var(--white);
+  display:flex; align-items:flex-end; overflow:hidden;
+  border-radius:0 0 var(--radius-lg) var(--radius-lg);
+}
+.hero-bg{ position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.72; }
+.hero-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(0,0,0,0.85) 5%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.12) 100%);
+}
+.hero-side-controls{
+  position:absolute; top:36px; right:36px; z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:12px;
+}
+.scroll-pill{
+  width:42px; height:64px; border:1.5px solid rgba(255,255,255,0.5); border-radius:var(--radius-pill);
+  display:flex; align-items:center; justify-content:center; color:#fff; font-size:14px;
+  background:rgba(255,255,255,0.06);
+}
+.round-toggle{
+  width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.12);
+  display:flex; align-items:center; justify-content:center; color:#fff; font-size:16px;
+  border:1px solid rgba(255,255,255,0.3);
+}
+.hero-inner{ position:relative; z-index:2; max-width:var(--max); margin:0 auto; padding:90px 28px 64px; width:100%; }
+.hero h1{
+  font-weight:900; font-size:clamp(36px, 5.6vw, 64px); line-height:1.05; letter-spacing:-0.01em; max-width:800px;
+}
+.hero p{ margin-top:20px; font-size:17px; max-width:480px; color:rgba(255,255,255,0.82); }
+.hero-actions{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:15px 26px;
+  font-size:14px; font-weight:700; border-radius:var(--radius-pill);
+  transition:transform .2s ease, background .2s ease, color .2s ease; border:1px solid transparent;
+}
+.btn-primary{background:var(--white); color:var(--black);}
+.btn-primary:hover{background:#8a6a52; color:var(--white); transform:translateY(-2px);}
+.btn-ghost{background:rgba(255,255,255,0.08); color:var(--white); border-color:rgba(255,255,255,0.45);}
+.btn-ghost:hover{background:rgba(255,255,255,0.18); transform:translateY(-2px);}
+.btn-dark{background:var(--black); color:var(--white);}
+.btn-dark:hover{background:#333;}
+
+/* ---------- Installment banner ---------- */
+.banner{ max-width:var(--max); margin:70px auto; padding:0 28px; }
+.banner-card{
+  display:grid; grid-template-columns:1fr 1fr;
+  background:var(--black); color:var(--white);
+  border-radius:var(--radius-lg); overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,0.4);
+}
+.banner-left{ padding:52px 48px; }
+.banner-left .brand{ font-weight:800; font-size:16px; margin-bottom:26px; }
+.banner-left .brand span{ display:block; font-family:'Playfair Display', serif; font-style:italic; font-weight:500; font-size:11px; color:#c8a888; }
+.banner-left h2{ font-weight:800; font-size:clamp(24px,3vw,32px); line-height:1.15; margin-bottom:14px; }
+.banner-left p{ color:rgba(255,255,255,0.7); font-size:14.5px; margin-bottom:20px; }
+.pay-badges{ display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+.pay-badges span{ padding:8px 16px; border-radius:var(--radius-pill); font-size:12px; font-weight:700; }
+.badge-a{ background:#ff5fa2; color:#fff; }
+.badge-b{ background:#1fc1a3; color:#062824; }
+.banner-right{
+  position:relative; min-height:280px; background-size:cover; background-position:center;
+  display:flex; align-items:flex-end; padding:36px;
+}
+.banner-right::before{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.05)); }
+.banner-right .txt{ position:relative; z-index:1; color:#fff; }
+.banner-right .txt h3{ font-weight:800; font-size:25px; line-height:1.2; text-transform:uppercase; }
+.banner-right .txt p{ margin-top:8px; font-size:13.5px; color:rgba(255,255,255,0.85); }
+@media (max-width:760px){ .banner-card{grid-template-columns:1fr;} .banner-left{padding:40px 28px;} }
+
+/* ---------- Section basics ---------- */
+section{ padding:90px 0; }
+.section-head{ max-width:640px; margin:0 auto 50px; text-align:center; }
+.section-head h2{ font-weight:800; font-size:clamp(28px,4vw,42px); letter-spacing:-0.01em; }
+.section-head p{ margin-top:14px; color:rgba(12,12,12,0.65); font-size:15.5px; }
+
+/* ---------- About ---------- */
+.about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
+.about-grid img{ border-radius:var(--radius-lg); aspect-ratio:4/5; object-fit:cover; }
+.about-text h2{ font-weight:800; font-size:clamp(30px,4vw,44px); margin-bottom:20px; }
+.about-text p{ color:rgba(12,12,12,0.7); font-size:15.5px; margin-bottom:16px; max-width:520px; }
+.stat-row{ display:flex; gap:40px; margin-top:32px; flex-wrap:wrap; }
+.stat b{ display:block; font-weight:800; font-size:30px; }
+.stat span{ font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; color:rgba(12,12,12,0.55); }
+@media (max-width:860px){ .about-grid{grid-template-columns:1fr; gap:36px;} }
+
+/* ---------- Grid / gallery ---------- */
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:900px){ .grid-3{grid-template-columns:repeat(2,1fr);} .grid-4{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){ .grid-3{grid-template-columns:1fr;} .grid-4{grid-template-columns:1fr;} }
+.gal-item{ position:relative; overflow:hidden; border-radius:var(--radius-md); aspect-ratio:4/5; }
+.gal-item img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.gal-item:hover img{ transform:scale(1.06); }
+.gal-tag{
+  position:absolute; left:14px; bottom:14px; z-index:2; color:#fff; font-size:12px; font-weight:700;
+  background:rgba(12,12,12,0.55); padding:6px 14px; border-radius:var(--radius-pill);
+}
+.filters{ display:flex; gap:10px; justify-content:center; margin-bottom:38px; flex-wrap:wrap; }
+.filter-btn{
+  padding:10px 20px; border:1px solid var(--line); border-radius:var(--radius-pill);
+  font-size:12.5px; font-weight:700; background:transparent; transition:all .2s ease;
+}
+.filter-btn.active, .filter-btn:hover{ background:var(--black); color:var(--white); border-color:var(--black); }
+
+/* ---------- Packages ---------- */
+.pkg-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+@media (max-width:900px){ .pkg-grid{grid-template-columns:1fr;} }
+.pkg{
+  background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:38px 32px; display:flex; flex-direction:column;
+}
+.pkg.featured{ background:var(--black); color:var(--white); border-color:var(--black); transform:translateY(-10px); }
+.pkg .tag{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#8a6a52; margin-bottom:10px; }
+.pkg.featured .tag{ color:#c8a888; }
+.pkg h3{ font-weight:800; font-size:22px; margin-bottom:8px; }
+.pkg .price{ font-weight:800; font-size:32px; margin:14px 0 4px; }
+.pkg .installment{ font-size:12.5px; opacity:.65; margin-bottom:22px; }
+.pkg ul{ margin-bottom:28px; flex-grow:1; }
+.pkg ul li{ font-size:14px; padding:9px 0; border-top:1px solid var(--line); display:flex; gap:10px; align-items:flex-start; }
+.pkg.featured ul li{ border-color:var(--line-dark); }
+.pkg ul li:first-child{ border-top:none; }
+.pkg ul li::before{ content:'✓'; color:#8a6a52; font-weight:800; }
+.pkg.featured ul li::before{ color:#c8a888; }
+.pkg .btn{ width:100%; justify-content:center; }
+
+/* ---------- Testimonials ---------- */
+.testi-track{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+@media (max-width:900px){ .testi-track{grid-template-columns:1fr;} }
+.testi-card{ background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px; }
+.stars{ color:#8a6a52; font-size:14px; margin-bottom:16px; letter-spacing:2px; }
+.testi-card p{ font-size:15px; color:rgba(12,12,12,0.75); margin-bottom:24px; font-family:'Playfair Display', serif; font-style:italic; }
+.testi-person{ display:flex; align-items:center; gap:12px; }
+.testi-person img{ width:44px; height:44px; border-radius:50%; object-fit:cover; }
+.testi-person b{ display:block; font-size:14px; }
+.testi-person span{ font-size:12.5px; color:rgba(12,12,12,0.55); }
+
+/* ---------- Contact / booking ---------- */
+.contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; }
+@media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+.contact-info h2{ font-weight:800; font-size:clamp(26px,3.4vw,36px); margin-bottom:18px; }
+.contact-info p{ color:rgba(12,12,12,0.65); margin-bottom:30px; font-size:15px; }
+.info-row{ display:flex; gap:16px; margin-bottom:22px; align-items:flex-start; }
+.info-row .ic{
+  width:42px; height:42px; border-radius:50%; background:var(--black); color:#fff;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px;
+}
+.info-row b{ display:block; font-size:14.5px; }
+.info-row span{ font-size:13.5px; color:rgba(12,12,12,0.6); }
+.social-row{ display:flex; gap:12px; margin-top:24px; }
+.social-row a{
+  width:40px; height:40px; border:1px solid var(--line); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+  transition:all .2s ease;
+}
+.social-row a:hover{ background:var(--black); color:#fff; border-color:var(--black); }
+form.booking{ background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:36px; }
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:560px){ .form-row{grid-template-columns:1fr;} }
+.field{ margin-bottom:18px; }
+.field label{ display:block; font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:8px; }
+.field input, .field select, .field textarea{
+  width:100%; padding:13px 16px; border:1px solid var(--line); border-radius:var(--radius-sm);
+  font-family:inherit; font-size:14.5px; background:var(--cream);
+}
+.field textarea{ resize:vertical; min-height:100px; }
+.field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--black); outline-offset:1px; }
+.submit-btn{
+  width:100%; padding:16px; background:var(--black); color:#fff; border:0; border-radius:var(--radius-pill);
+  font-weight:700; font-size:14px; transition:background .2s ease;
+}
+.submit-btn:hover{ background:#333; }
+.form-msg{ margin-top:14px; font-size:13.5px; display:none; }
+.form-msg.show{ display:block; }
+.form-msg.ok{ color:#2e7d32; }
+.map-embed{ border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--line); margin-top:40px; }
+.map-embed iframe{ width:100%; height:320px; border:0; display:block; }
+
+/* ---------- FAQ ---------- */
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-q{ display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-weight:700; font-size:15.5px; cursor:pointer; }
+.faq-q .plus{ font-size:20px; transition:transform .25s ease; font-weight:400; }
+.faq-item.open .plus{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+.faq-a p{ padding-bottom:22px; color:rgba(12,12,12,0.65); font-size:14.5px; max-width:640px; }
+
+/* ---------- CTA strip ---------- */
+.cta-strip{ background:var(--black); color:#fff; text-align:center; padding:80px 0; border-radius:var(--radius-lg); max-width:var(--max); margin:0 auto; }
+.cta-strip h2{ font-weight:800; font-size:clamp(26px,4vw,40px); margin-bottom:18px; }
+.cta-strip p{ color:rgba(255,255,255,0.7); max-width:520px; margin:0 auto 30px; }
+
+/* ---------- Footer ---------- */
+footer.site{ background:var(--black); color:rgba(255,255,255,0.8); padding:70px 0 26px; margin-top:90px; }
+.foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; margin-bottom:50px; }
+@media (max-width:800px){ .foot-grid{grid-template-columns:1fr 1fr; row-gap:34px;} }
+.foot-brand{ font-weight:900; font-size:22px; color:#fff; margin-bottom:12px; }
+.foot-brand span{ display:block; font-family:'Playfair Display', serif; font-style:italic; font-weight:500; font-size:12px; color:#c8a888; margin-top:2px; }
+.foot-col h4{ font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; color:#fff; margin-bottom:16px; }
+.foot-col ul li{ margin-bottom:10px; font-size:14px; }
+.foot-col ul li a:hover{ color:#c8a888; }
+.foot-bottom{
+  border-top:1px solid var(--line-dark); padding-top:22px; display:flex; justify-content:space-between;
+  flex-wrap:wrap; gap:10px; font-size:12.5px; color:rgba(255,255,255,0.5);
+}
+
+/* ---------- Reveal ---------- */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} .gal-item img{transition:none;} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="#home" class="logo">Ever After<span>Photography</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Session</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home" style="padding:0;">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=80');"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-side-controls">
+    <div class="scroll-pill">↕</div>
+    <div class="round-toggle">☀</div>
+  </div>
+  <div class="hero-inner">
+    <h1>Capturing Love Stories Since The Past Decade</h1>
+    <p>Capturing moments from today, creating memories for a lifetime.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Book a Session ↗</a>
+      <a href="#portfolio" class="btn btn-ghost">Explore Portfolio ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALLMENT BANNER -->
+<div class="banner">
+  <div class="banner-card reveal">
+    <div class="banner-left">
+      <div class="brand">Ever After<span>Photography</span></div>
+      <h2>Wedding &amp; Portrait Installments</h2>
+      <p>Lock in any date with flexible monthly payments.</p>
+      <div class="pay-badges">
+        <span class="badge-a">Klarna</span>
+        <span class="badge-b">Clearpay</span>
+      </div>
+      <a href="#pricing" class="btn btn-dark">Explore Pricing</a>
+    </div>
+    <div class="banner-right" style="background-image:url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80');">
+      <div class="txt">
+        <h3>Invest Smarter.<br>Tell Your Story.</h3>
+        <p>High-end storytelling. Budget-friendly booking.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-head reveal">
+    <h2>About <span class="serif-i">Us</span></h2>
+  </div>
+  <div class="wrap about-grid">
+    <img class="reveal" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Photographer at work during a wedding in Dar es Salaam">
+    <div class="about-text reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2>A Decade of Honest, <span class="serif-i">Beautiful</span> Photography.</h2>
+      <p>Based in Dar es Salaam, Ever After Photography has spent the past decade documenting weddings, engagements and family milestones across Tanzania, from beach ceremonies to garden receptions.</p>
+      <p>We believe a photograph should feel like a memory, not a pose. Our team blends candid documentary storytelling with editorial-quality portraits, so your story reads true for years to come.</p>
+      <div class="stat-row">
+        <div class="stat"><b>420+</b><span>Weddings Shot</span></div>
+        <div class="stat"><b>10 Yrs</b><span>Experience</span></div>
+        <div class="stat"><b>15</b><span>Regions Covered</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background:var(--white); border-radius:var(--radius-lg); max-width:var(--max); margin:0 auto;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Services Built Around Your Day</h2>
+      <p>From intimate engagement shoots to full wedding-day coverage, every package is tailored to how you want your story told.</p>
+    </div>
+    <div class="grid-3">
+      <div class="pkg reveal">
+        <span class="tag">Portraits</span>
+        <h3>Portrait Sessions</h3>
+        <p style="font-size:14px; color:rgba(12,12,12,0.65); margin-bottom:0;">Studio or on-location portraits for individuals, couples and families.</p>
+      </div>
+      <div class="pkg reveal">
+        <span class="tag">Weddings</span>
+        <h3>Wedding Coverage</h3>
+        <p style="font-size:14px; color:rgba(12,12,12,0.65); margin-bottom:0;">Full-day documentary and posed coverage of your ceremony and reception.</p>
+      </div>
+      <div class="pkg reveal">
+        <span class="tag">Events</span>
+        <h3>Events &amp; Celebrations</h3>
+        <p style="font-size:14px; color:rgba(12,12,12,0.65); margin-bottom:0;">Engagement parties and corporate events, captured with the same care as a wedding day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Work</span>
+      <h2>Portfolio</h2>
+      <p>A selection of weddings, portraits and events we have had the honor of capturing.</p>
+    </div>
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="weddings">Weddings</button>
+      <button class="filter-btn" data-filter="portraits">Portraits</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+    </div>
+    <div class="grid-3">
+      <div class="gal-item reveal" data-cat="weddings"><span class="gal-tag">Wedding Day</span><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Wedding couple"></div>
+      <div class="gal-item reveal" data-cat="portraits"><span class="gal-tag">Studio Portrait</span><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" alt="Studio portrait of a woman"></div>
+      <div class="gal-item reveal" data-cat="weddings"><span class="gal-tag">Beach Wedding</span><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=700&q=80" alt="Beach wedding"></div>
+      <div class="gal-item reveal" data-cat="events"><span class="gal-tag">Celebration</span><img src="https://images.unsplash.com/photo-1552334405-eae23d5d9d33?auto=format&fit=crop&w=700&q=80" alt="Event celebration"></div>
+      <div class="gal-item reveal" data-cat="portraits"><span class="gal-tag">Couple Portrait</span><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=700&q=80" alt="Couple portrait session"></div>
+      <div class="gal-item reveal" data-cat="weddings"><span class="gal-tag">Garden Wedding</span><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80" alt="Garden wedding"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--white); border-radius:var(--radius-lg); max-width:var(--max); margin:0 auto;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Packages</span>
+      <h2>Pricing</h2>
+      <p>Transparent packages, with flexible installments available on every plan.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg reveal">
+        <span class="tag">Starter</span>
+        <h3>Portrait Session</h3>
+        <div class="price">$150</div>
+        <div class="installment">or 3 installments of $50 with Klarna</div>
+        <ul>
+          <li>1-hour on-location or studio session</li>
+          <li>1 outfit change</li>
+          <li>30 edited digital photos</li>
+          <li>Private online gallery</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Book This Package</a>
+      </div>
+      <div class="pkg featured reveal">
+        <span class="tag">Most Popular</span>
+        <h3>Full Wedding Day</h3>
+        <div class="price">$1,200</div>
+        <div class="installment">or 6 installments of $200 with Clearpay</div>
+        <ul>
+          <li>10-hour full-day coverage</li>
+          <li>2 photographers + 1 videographer</li>
+          <li>400+ edited digital photos</li>
+          <li>3-minute highlight film</li>
+          <li>Printed 30-page album</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Book This Package</a>
+      </div>
+      <div class="pkg reveal">
+        <span class="tag">Add-On</span>
+        <h3>Events &amp; Celebrations</h3>
+        <div class="price">$350</div>
+        <div class="installment">or 3 installments of $117 with Klarna</div>
+        <ul>
+          <li>4-hour event coverage</li>
+          <li>1 photographer</li>
+          <li>120 edited digital photos</li>
+          <li>Same-week sneak peek gallery</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Book This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap" style="max-width:820px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Pricing FAQ</h2>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><span>How do the installments work?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Pay a 30% deposit to secure your date, then split the remaining balance into equal monthly installments due before your event.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><span>Do you travel outside Dar es Salaam?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Yes, we regularly shoot in other regions across Tanzania. Travel fees depend on distance and are quoted at booking.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><span>How far in advance should we book?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>We recommend booking 3 to 6 months ahead, especially during peak wedding season.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Client Love</span>
+      <h2>Stories From Our Clients</h2>
+    </div>
+    <div class="testi-track">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Ever After made our wedding feel effortless. The photos still give me chills every time I look at them."</p>
+        <div class="testi-person">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="">
+          <div><b>Amina &amp; David</b><span>Dar es Salaam</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Professional, punctual and so patient with our big family. Every guest is captured beautifully."</p>
+        <div class="testi-person">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=100&q=80" alt="">
+          <div><b>Grace Mwangi</b><span>Zanzibar</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"The installment plan let us book our dream photographer without stress. Worth every penny."</p>
+        <div class="testi-person">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+          <div><b>Erick Mushi</b><span>Arusha</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip reveal">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#c8a888;">Ready When You Are</span>
+    <h2>Let's Tell Your Story Next</h2>
+    <p>Dates fill quickly during wedding season, secure yours with a small deposit today.</p>
+    <a href="#contact" class="btn btn-primary">Book a Session ↗</a>
+  </div>
+</div>
+
+<!-- CONTACT / BOOKING -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>We Would Love To Hear From You</h2>
+      <p>Prefer to talk it through first? Call, message or visit our studio, we are happy to walk you through packages and dates.</p>
+      <div class="info-row"><div class="ic">📍</div><div><b>Studio Address</b><span>Chole Road, Msasani Peninsula, Dar es Salaam, Tanzania</span></div></div>
+      <div class="info-row"><div class="ic">📞</div><div><b>Phone / WhatsApp</b><span>+255 712 345 678</span></div></div>
+      <div class="info-row"><div class="ic">✉️</div><div><b>Email</b><span>hello@everafterphoto.com</span></div></div>
+      <div class="info-row"><div class="ic">🕐</div><div><b>Studio Hours</b><span>Monday to Saturday, 9:00 AM to 6:00 PM</span></div></div>
+      <div class="social-row">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://wa.me/255712345678" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Msasani%20Peninsula%2C%20Dar%20es%20Salaam%2C%20Tanzania&output=embed" loading="lazy" title="Studio location map"></iframe>
+      </div>
+    </div>
+
+    <form class="booking reveal" id="bookingForm" novalidate>
+      <span class="eyebrow">Booking Request</span>
+      <h2 style="font-weight:800; font-size:24px; margin-bottom:24px;">Request Your Date</h2>
+      <div class="form-row">
+        <div class="field"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="e.g. Amina Hassan" required></div>
+        <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="e.g. +255 712 345 678" required></div>
+      </div>
+      <div class="field"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@example.com" required></div>
+      <div class="form-row">
+        <div class="field">
+          <label for="service">Session Type</label>
+          <select id="service" name="service">
+            <option>Wedding Coverage</option>
+            <option>Portrait Session</option>
+            <option>Events &amp; Celebrations</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="date">Event Date</label><input type="date" id="date" name="date" required></div>
+      </div>
+      <div class="field"><label for="location">Event Location</label><input type="text" id="location" name="location" placeholder="e.g. Coco Beach, Dar es Salaam"></div>
+      <div class="field"><label for="message">Tell Us About Your Day</label><textarea id="message" name="message" placeholder="Guest count, venue, style you love, anything we should know..."></textarea></div>
+      <button type="submit" class="submit-btn">Send Booking Request</button>
+      <div class="form-msg" id="formMsg"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Ever After<span>Photography</span></div>
+        <p style="font-size:14px; color:rgba(255,255,255,0.6); max-width:280px; margin-top:14px;">
+          Documentary wedding and portrait photography based in Dar es Salaam, serving clients across Tanzania.
+        </p>
+        <div class="social-row" style="margin-top:22px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://wa.me/255712345678" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#pricing">Wedding Coverage</a></li>
+          <li><a href="#pricing">Portrait Sessions</a></li>
+          <li><a href="#pricing">Events</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Msasani Peninsula, Dar es Salaam</li>
+          <li>+255 712 345 678</li>
+          <li>hello@everafterphoto.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year"></span> Ever After Photography. All rights reserved.</span>
+      <span>Dar es Salaam, Tanzania</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other => {
+        if (other !== item) { other.classList.remove('open'); other.querySelector('.faq-a').style.maxHeight = null; }
+      });
+      item.classList.toggle('open', !isOpen);
+      a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
+    });
+  });
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galItems = document.querySelectorAll('.gal-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.filter;
+      galItems.forEach(item => { item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none'; });
+    });
+  });
+
+  const form = document.getElementById('bookingForm');
+  const msg = document.getElementById('formMsg');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('#name').value.trim();
+      const email = form.querySelector('#email').value.trim();
+      const phone = form.querySelector('#phone').value.trim();
+      const date = form.querySelector('#date').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const phoneOk = phone.replace(/\s/g, '').length >= 9;
+
+      if (!name || !emailOk || !phoneOk || !date) {
+        msg.textContent = 'Please check your name, a valid email, a valid phone number and your event date.';
+        msg.className = 'form-msg show';
+        return;
+      }
+      msg.textContent = `Thank you, ${name.split(' ')[0]}! Your booking request has been received. We will reply within 24 hours to confirm your session on ${date}.`;
+      msg.className = 'form-msg show ok';
+      form.reset();
+    });
+  }
+
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  window.addEventListener('scroll', () => {
+    const sections = ['home','about','portfolio','pricing','testimonials','contact'];
+    let current = 'home';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+});
+</script>
+</body>
+</html>
